@@ -20,7 +20,14 @@ Follow the steps from https://maven.apache.org/install.html
 > - Import the data from ***\utils\sql\Data Import.csv***, by following the next steps: https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-table.html
 
 ## 2. Running the application
+
+### How to start the application
 Start the application, by running the script ***\utils\start.bat***
+
+#### How to clean the cached build output
+In Maven based project, many cached output existed in your “target” folder. When you want to build your project for deployment, you have to make sure clean all the cached output so that you are always get the latest for deployment.
+
+To clean your project cached output, please run the script ***\utils\clean.bat***
 
 ## 3. Explanation of the code step by step
 First, we need to add the dependencies to the project, so that we can use within the Java code.
