@@ -21,7 +21,7 @@ Follow the steps from https://maven.apache.org/install.html
 
 ## 2. Running the application
 
-### How to start the application
+#### How to start the application
 Start the application, by running the script ***\utils\start.bat***
 
 #### How to clean the cached build output
