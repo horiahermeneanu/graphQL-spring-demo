@@ -13,14 +13,14 @@ import com.demo.graphql.service.VehicleService;
 @Component
 public class VehicleQuery implements GraphQLQueryResolver {
 
-    @Autowired
-    private VehicleService vehicleService;
+	@Autowired
+	private VehicleService vehicleService;
 
-    public List<Vehicle> getVehicles(final int count) {
-        return this.vehicleService.getAllVehicles(count);
-    }
+	public List<Vehicle> getVehicles(final int count) {
+		return vehicleService.getAllVehicles(count);
+	}
 
-    public Optional<Vehicle> getVehicle(final int id) {
-        return this.vehicleService.getVehicle(id);
-    }
+	public Optional<Vehicle> getVehicle(final int id) {
+		return vehicleService.getVehicle(id);
+	}
 }

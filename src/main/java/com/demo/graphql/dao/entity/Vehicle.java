@@ -70,5 +70,4 @@ public class Vehicle implements Serializable {
 	public void setLaunchDate(LocalDate launchDate) {
 		this.launchDate = launchDate;
 	}
-
 }
