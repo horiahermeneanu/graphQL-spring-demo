@@ -197,7 +197,7 @@ public class Vehicle implements Serializable {
 
 }
 ```
-**Create the Repository class - to extends the JpaRepository**
+**Create the Repository class - to extend the JpaRepository**
 ```
 package com.demo.graphql.dao.repository;
 
@@ -211,7 +211,7 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
 }
 ```
 
-**Create the schema - vehicleql.graphqls**
+**Create the schema - vehicle.graphqls**
 ```
 type Vehicle {
 	id: ID!,
@@ -233,7 +233,7 @@ type Mutation {
 ```
 
 
-**Create the Mutation Resolver class - to extends the GraphQLMutationResolver**
+**Create the Mutation Resolver class - to extend the GraphQLMutationResolver**
 ```
 package com.demo.graphql.mutation;
 
@@ -257,7 +257,7 @@ public class VehicleMutation implements GraphQLMutationResolver {
 
 ```
 
-**Create the Query Resolver class - to extends the GraphQLQueryResolver**
+**Create the Query Resolver class - to extend the GraphQLQueryResolver**
 ```
 package com.demo.graphql.query;
 
