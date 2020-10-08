@@ -1,5 +1,6 @@
 package com.demo.graphql.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -29,6 +30,31 @@ public class VehicleService {
 		final Vehicle vehicle = vehicleBuilder.buildVehicle(type, modelCode, brandName, launchDate);
 		return vehicleRepository.save(vehicle);
 	}
+
+	@Transactional
+	public boolean deleteVehicle(final int id) {
+		final Optional<Vehicle> vehicle = getVehicle(id);
+		if(!vehicle.isPresent()) {
+			return false;
+		}
+
+		vehicleRepository.deleteById(id);
+		return true;
+	}
+
+	@Transactional
+	public Vehicle updateVehicle(final int id, final String brandName, final String launchDate) {
+		final Optional<Vehicle> vehicleOptional = getVehicle(id);
+		if(!vehicleOptional.isPresent()) {
+			return null;
+		}
+
+		Vehicle vehicle = vehicleOptional.get();
+		vehicle.setBrandName(brandName);
+		vehicle.setLaunchDate(LocalDate.parse(launchDate));
+		return vehicleRepository.save(vehicle);
+	}
+
 
 	@Transactional(readOnly = true)
 	public List<Vehicle> getAllVehicles(final int count) {

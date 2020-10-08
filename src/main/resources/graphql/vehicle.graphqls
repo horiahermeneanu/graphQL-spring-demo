@@ -13,4 +13,6 @@ type Query {
 
 type Mutation {
 	createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
+	deleteVehicle(id: ID):Boolean
+	updateVehicle(id: ID, brandName: String, launchDate: String):Vehicle
 }
