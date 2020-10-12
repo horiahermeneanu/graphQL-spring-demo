@@ -10,6 +10,9 @@ import graphql.language.SourceLocation;
 
 public class VehicleNotFoundException extends RuntimeException implements GraphQLError {
 
+	private static final long serialVersionUID = -4152181936998340679L;
+	private final String invalidField;
+
 	@Override
 	public synchronized Throwable getCause() {
 		return null;
@@ -19,9 +22,6 @@ public class VehicleNotFoundException extends RuntimeException implements GraphQ
 	public StackTraceElement[] getStackTrace() {
 		return null;
 	}
-
-	private static final long serialVersionUID = -4152181936998340679L;
-	private final String invalidField;
 
 	public VehicleNotFoundException(String message, String invalidField) {
 		super(message);
